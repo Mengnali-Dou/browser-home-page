@@ -1,25 +1,48 @@
-<template>
-  <a-layout class="layout">
-    <a-layout-header>
-
-    </a-layout-header>
-    <a-layout-content style="padding: 0 50px">
-      <SelectMinimalist />
-    </a-layout-content>
-    <a-layout-footer style="text-align: center">
-      <div style="float: left">
-        <a-space>
-<!--          <setting-outlined id="settingIcon" style="font-size: 25px" @mouseenter="settingEnter" @mouseleave="settingLeave"/>-->
-          <a-button shape="circle" :size="size" @click="showDrawer('large')" type="primary">
-            <template #icon><SettingOutlined /></template>
-          </a-button>
-        </a-space>
-      </div>
-      <div style="margin-top: 1%">
-        <span class="task_name">{{slogans[4]}}</span>
-      </div>
-    </a-layout-footer>
-  </a-layout>
+<template style="padding-left: 30px; padding-right: 30px;">
+  <div class="header">
+    <div style="float: right; height: 100%">
+      <WeatherLayout></WeatherLayout>
+    </div>
+  </div>
+  <div class="center">
+    <SelectMinimalist />
+  </div>
+  <div class="footer" style="text-align: center">
+    <div style="float: left; margin-top: 30px">
+      <a-space>
+        <!--          <setting-outlined id="settingIcon" style="font-size: 25px" @mouseenter="settingEnter" @mouseleave="settingLeave"/>-->
+        <a-button shape="circle" :size="size" @click="showDrawer('large')" type="primary" style="margin-left: 30px; margin-bottom: 50px">
+          <template #icon><SettingOutlined /></template>
+        </a-button>
+      </a-space>
+    </div>
+    <div style="margin-top: 1%;">
+      <span class="task_name">{{slogans[4]}}</span>
+    </div>
+  </div>
+<!--  <a-layout class="layout">-->
+<!--    <a-layout-header class="header">-->
+<!--      <div style="float: right">-->
+<!--        <WeatherLayout></WeatherLayout>-->
+<!--      </div>-->
+<!--    </a-layout-header>-->
+<!--    <a-layout-content style="padding: 0 50px">-->
+<!--      <SelectMinimalist />-->
+<!--    </a-layout-content>-->
+<!--    <a-layout-footer style="text-align: center">-->
+<!--      <div style="float: left">-->
+<!--        <a-space>-->
+<!--&lt;!&ndash;          <setting-outlined id="settingIcon" style="font-size: 25px" @mouseenter="settingEnter" @mouseleave="settingLeave"/>&ndash;&gt;-->
+<!--          <a-button shape="circle" :size="size" @click="showDrawer('large')" type="primary">-->
+<!--            <template #icon><SettingOutlined /></template>-->
+<!--          </a-button>-->
+<!--        </a-space>-->
+<!--      </div>-->
+<!--      <div style="margin-top: 1%">-->
+<!--        <span class="task_name">{{slogans[4]}}</span>-->
+<!--      </div>-->
+<!--    </a-layout-footer>-->
+<!--  </a-layout>-->
   <a-drawer
       v-model:visible="visible"
       class="custom-class"
@@ -37,6 +60,7 @@ import { defineComponent, ref } from 'vue';
 import { SettingOutlined } from '@ant-design/icons-vue';
 import SettingLayout from "@/layouts/SettingLayout.vue";
 import SelectMinimalist from "@/pages/SelectMinimalist.vue";
+import WeatherLayout from "@/layouts/WeatherLayout.vue";
 export default defineComponent({
   setup() {
     const visible = ref(false);
@@ -73,6 +97,7 @@ export default defineComponent({
     SettingLayout,
     SettingOutlined,
     SelectMinimalist,
+    WeatherLayout,
   },
   data() {
     return {
@@ -115,6 +140,32 @@ export default defineComponent({
 .changeIcon {
   display: block;
   font-size: 30px
+}
+.header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding-right: 20px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.center {
+  position: absolute;
+  top: 80px;
+  bottom: 80px;
+  width: 100%;
+  height: auto;
+}
+
+.footer {
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  bottom: 0;
+}
+.ant-layout-header {
+
 }
 
 [data-theme='dark'] .site-layout-content {

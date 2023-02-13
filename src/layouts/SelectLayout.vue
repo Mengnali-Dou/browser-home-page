@@ -1,9 +1,9 @@
 <template>
   <div style="text-align: center">
     <a-space direction="vertical">
-      <a-select v-model:value="searchEngine" size="large" style="margin-right: -1px; min-width: 50px" @change="onChange($event)">
+      <a-select v-model:value="searchEngine" size="large" style="margin-right: -1px; min-width: 7%" @change="onChange($event)">
         <a-select-option value="https://cn.bing.com/search?q=">Bing</a-select-option>
-        <a-select-option value="https://www.google.com/search?q=">Google</a-select-option>
+        <a-select-option value="https://www.google.com/search?q="><chrome-filled />&nbsp;Google</a-select-option>
         <a-select-option value="https://www.baidu.com/s?&wd=">百度</a-select-option>
       </a-select>
       <a-input-search
@@ -20,6 +20,7 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import {message} from "ant-design-vue";
+import {ChromeFilled} from "@ant-design/icons-vue";
 export default defineComponent({
   setup() {
     const searchEngine = ref('https://cn.bing.com/search?q=');
@@ -34,6 +35,9 @@ export default defineComponent({
       inputValue,
       info,
     };
+  },
+  components: {
+    ChromeFilled,
   },
   methods: {
     onChange(event) {

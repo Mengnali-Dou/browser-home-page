@@ -1,6 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import 'ant-design-vue/dist/antd.css';
+import axios from "axios";
+import VueAxios from "vue-axios";
+// import {VueJsonp} from "vue-jsonp";
 import {
     AutoComplete,
     Breadcrumb,
@@ -11,7 +14,9 @@ import {
     Layout,
     Menu,
     Select,
-    SelectOption
+    SelectOption,
+    Row,
+    Col,
 } from "ant-design-vue";
 
 const app = createApp(App);
@@ -26,6 +31,9 @@ app.use(Select)
 app.use(Cascader)
 app.use(AutoComplete)
 app.use(SelectOption)
+app.use(Row)
+app.use(Col)
+app.use(VueAxios, axios)
+// app.use(VueJsonp)
 
 app.mount('#app')
-
