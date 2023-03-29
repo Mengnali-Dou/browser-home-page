@@ -5,6 +5,7 @@
         <a-select-option value="https://cn.bing.com/search?q=">Bing</a-select-option>
         <a-select-option value="https://www.google.com/search?q="><chrome-filled />&nbsp;Google</a-select-option>
         <a-select-option value="https://www.baidu.com/s?&wd=">百度</a-select-option>
+        <a-select-option value="https://github.com/search?q="><github-filled />&nbsp;Github</a-select-option>
       </a-select>
       <a-input-search
           v-model:value="inputValue"
@@ -20,7 +21,7 @@
 <script>
 import { defineComponent, ref } from 'vue';
 import {message} from "ant-design-vue";
-import {ChromeFilled} from "@ant-design/icons-vue";
+import {ChromeFilled, GithubFilled} from "@ant-design/icons-vue";
 export default defineComponent({
   setup() {
     const searchEngine = ref('https://cn.bing.com/search?q=');
@@ -38,6 +39,7 @@ export default defineComponent({
   },
   components: {
     ChromeFilled,
+    GithubFilled,
   },
   methods: {
     onChange(event) {

@@ -17,6 +17,7 @@ import {
     SelectOption,
     Row,
     Col,
+    Dropdown,
 } from "ant-design-vue";
 
 const app = createApp(App);
@@ -33,6 +34,7 @@ app.use(AutoComplete)
 app.use(SelectOption)
 app.use(Row)
 app.use(Col)
+app.use(Dropdown)
 app.use(VueAxios, axios)
 // app.use(VueJsonp)
 

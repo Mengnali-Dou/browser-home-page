@@ -61,6 +61,7 @@ import { SettingOutlined } from '@ant-design/icons-vue';
 import SettingLayout from "@/layouts/SettingLayout.vue";
 import SelectMinimalist from "@/pages/SelectMinimalist.vue";
 import WeatherLayout from "@/layouts/WeatherLayout.vue";
+// import SelectSimple from "@/pages/SelectSimple.vue";
 export default defineComponent({
   setup() {
     const visible = ref(false);
@@ -94,6 +95,7 @@ export default defineComponent({
     };
   },
   components: {
+    // SelectSimple,
     SettingLayout,
     SettingOutlined,
     SelectMinimalist,
@@ -170,5 +172,8 @@ export default defineComponent({
 
 [data-theme='dark'] .site-layout-content {
   background: #141414;
+}
+.task_name {
+  color: #faf2eb;
 }
 </style>

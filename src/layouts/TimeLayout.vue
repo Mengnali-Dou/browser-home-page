@@ -26,7 +26,7 @@ export default {
       let yy = new Date().getFullYear();    // year
       let mm = new Date().getMonth() + 1;    // month
       let dd = new Date().getDate();    // day
-      let hh = new Date().getHours();    // hour
+      let hh = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();    // hour
       // minute
       let mf =
           new Date().getMinutes() < 10

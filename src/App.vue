@@ -1,5 +1,5 @@
 <template>
-<CommonLayout class="layout"></CommonLayout>
+<CommonLayout class="layout" onselect="document.selection.empty()"></CommonLayout>
 <!--  <Test></Test>-->
   <img src="./assets/back_high_sierra.jpg" class="background">
 </template>
